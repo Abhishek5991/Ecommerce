@@ -1,0 +1,103 @@
+<?php
+	$connect = mysqli_connect('localhost', 'root', '', 'MyProject');
+	
+	$query = 'SELECT * FROM products';
+	$result = mysqli_query($connect, $query);
+	$chart_data = '';
+	while($row = mysqli_fetch_assoc($result)){
+	
+		$chart_data .= "{ year: '". $row["year"]."', profit: ". $row["profit"]. ", purchase: ". $row["purchase"]. ", sale: ". $row["sale"]."}, ";
+	}
+	
+	$chart_data = substr($chart_data, 0, -2);
+	
+?>
+
+<!DOCTYPE>
+<html lang='en'>
+
+<head>
+
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta name='description' content=''>
+    <meta name='author' content=''>
+
+    <title>Go Shopping Admin</title>
+	
+	<link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>	
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>	
+
+    <link href='css/bootstrap.min.css' rel='stylesheet'>
+
+    <link href='font-awesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+	
+	<link href='css/sb-admin.css' rel='stylesheet'>
+	
+	<script src='js/jquery.js'></script>
+	<link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css'>
+	
+	<script src='//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+	<script src='//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js'></script>
+	<script src='//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/Chart.min.js'></script>
+	
+</head>
+
+<body>
+
+	<div class='container'>
+		<div class='row'>
+			<div class='col-md-5' style='background: white;'>
+				<canvas id="myLineChart" ></canvas>
+			</div>
+			<div class='col-md-offset-1 col-md-5' style='background: white;'>
+				<canvas id="myBarChart" ></canvas>
+			</div>
+		</div>
+		<div class='row' style='margin-top: 15px;'> 
+			<div class='col-md-5' style='background: white;'>
+				<canvas id="myRadarChart" ></canvas>
+			</div>
+			<div class='col-md-offset-1 col-md-5' style='background: white;'>
+				<canvas id="mypolarAreaChart" ></canvas>
+			</div>
+		</div>
+		<div class='row' style='margin-top: 15px;'> 
+			<div class='col-md-5' style='background: white;'>
+				<canvas id="myPieChart" ></canvas>
+			</div>
+			<div class='col-md-offset-1 col-md-5' style='background: white;'>
+				<canvas id="myDoughnutChart" ></canvas>
+			</div>
+		</div>
+		
+		<div class='row' style='margin-top: 15px;'> 
+			<div class='col-md-5' style='background: white;'>
+				<canvas id="mylineChart" ></canvas>
+			</div>
+			<div class='col-md-offset-1 col-md-5' style='background: white;'>
+				<canvas id="mylineLogChart" ></canvas>
+			</div>
+		</div>
+
+<script>
+	
+	Morris.Line({					// Replace Line with Bar, Area
+		element: 'chart',
+		data: [<?php echo $chart_data; ?>],
+		xkey: 'year',   // Check for      xkeys   also
+		ykeys: ['profit', 'purchase', 'sale'],
+		labels: ['Profit', 'Purchase', 'Sale'],
+		hideHower: 'auto',
+		// stacked: true
+	});
+	
+</script>
+	</div>
+
+<script src='js/bootstrap.min.js'></script>
+
+</body>
+
+</html>

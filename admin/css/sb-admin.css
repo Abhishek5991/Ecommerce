@@ -1,0 +1,788 @@
+/*!
+ * Start Bootstrap - SB Admin Bootstrap Admin Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/* Global Styles */
+
+body {
+    margin-top: 100px;
+    background-color: #222;
+}
+
+@media(min-width:768px) {
+    body {
+        margin-top: 50px;
+    }
+}
+
+::-webkit-scrollbar{
+	width: 8px;
+}
+
+::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	background: #a6a6a6;
+	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+}
+
+::-webkit-scrollbar-track{
+	background: white;
+	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+a{
+	cursor: pointer;
+}
+
+button{
+	border: none;
+	cursor: pointer;
+}
+
+#wrapper {
+    padding-left: 0;
+}
+
+.navbar-brand{
+	background-color: #4caf50;
+    font-size: 24px;
+	padding-left: 34px;
+	padding-right: 44px;
+}
+
+.brand:hover{
+	background-color: #4caf50;
+}
+
+.huge {
+    font-size: 50px;
+    line-height: normal;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 225px;
+    }
+	
+	#page-wrapper {
+        padding: 10px;
+    }
+}
+
+/* Top Navigation */
+
+.top-nav {
+    padding: 0 15px;
+}
+
+.top-nav>li {
+    display: inline-block;
+    float: left;
+}
+
+.top-nav>li>a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height: 20px;
+    color: #bbb;
+}
+
+.top-nav>li>a:hover,
+.top-nav>li>a:focus,
+.top-nav>.open>a,
+.top-nav>.open>a:hover,
+.top-nav>.open>a:focus {
+    color: #fff;
+    background-color: #000;
+}
+
+.top-nav>.open>.dropdown-menu {
+    float: left;
+    position: absolute;
+    margin-top: 0;
+    border: 1px solid rgba(0,0,0,.15);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #fff;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.top-nav>.open>.dropdown-menu>li>a {
+    white-space: normal;
+}
+
+ul.message-dropdown {
+    padding: 0;
+    max-height: 250px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+li.message-preview {
+    width: 275px;
+    border-bottom: 1px solid rgba(0,0,0,.15);
+}
+
+li.message-preview>a {
+    padding-top: 15px;
+}
+
+li.message-footer {
+    margin: 5px 0;
+}
+
+ul.alert-dropdown {
+    width: 200px;
+}
+
+/* Side Navigation */
+
+@media(min-width:768px) {
+    .side-nav {
+        position: fixed;
+        top: 50px;
+        left: 225px;
+        width: 225px;
+        margin-left: -225px;
+        border: none;
+        border-radius: 0;
+        overflow-y: auto;
+        background-color: #003333;
+    }
+
+    .side-nav>li>a {
+        width: 225px;
+    }
+
+    .side-nav>li + li a:hover,
+    .side-nav>li + li a:focus {
+        outline: none;
+        background-color: #000 !important;
+    }
+}
+
+.side-nav{
+	background-color: #505458;
+	height: 100%;
+}
+
+.side-nav-image{
+	padding-top: 10px;
+}
+
+.side-nav-image a span:nth-child(3){
+	color: white;
+	padding-top: 10px;
+	font-size: 20px;
+}
+
+.side-nav-image a span:nth-child(5){
+	color: #ddd;
+	padding-top: 10px ;
+	font-size: 16px;
+}
+
+.side-nav>li a i{
+	font-size: 30px;
+	padding-bottom: 5px;
+}
+
+.side-nav>li a .feat_title{
+	font-size: 16px;
+	padding-bottom: 5px;
+}
+
+.side-nav>li a .arrow{
+	position: absolute;
+	top: 30px;
+	right: 20px;
+	cursor: pointer;
+}
+
+.side-nav>li ul li{
+	position: relative;
+}
+
+.side-nav>li a .arrow_in{
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	cursor: pointer;
+}
+
+.side-nav>li>ul {
+    padding: 0;
+}
+
+.side-nav>li>ul>li a {
+    display: block;
+    padding: 10px 15px 10px;
+    text-decoration: none;
+    color: #999;
+}
+
+.side-nav>li{
+	text-align: center;
+}
+
+.side-nav>li>ul>li a:hover {
+    color: #fff;
+}
+
+/*  Page-wrapper Page  */
+
+#page-wrapper {
+    width: 100%;
+    padding: 40px;
+    background-color: #eee;
+	overflow: hidden;
+}
+
+#page-wrapper .heading_page div:nth-child(1){
+	height: 6px;
+	border-radius: 3px;
+	width: 80px;
+	background-color: #4caf50;
+}
+
+#page-wrapper .heading_page div:nth-child(2){
+	font-size: 35px;
+	padding-left: 0;
+	margin: 8px 0 30px;
+	color: #555;	
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+								/*  	all_products.php	  */
+
+#page-wrapper .heading_page .all_p_search{
+	border-bottom: 2px solid #4caf50;
+	margin: 0px;
+	padding-bottom: 3px;
+	padding-left: 0;
+}
+
+#page-wrapper .heading_page .all_p_search i{
+	font-size: 18px;
+	color: #4caf50;
+}
+
+#page-wrapper .heading_page .all_p_search input[type='search']{
+	border: none;
+	font-size: 16px;
+	padding-left: 10px;
+	color: #bbb;
+	background: inherit;
+}
+
+#page-wrapper .all_p_page{
+	margin-top: 30px;
+	margin-bottom: 30px;
+	display: flex;
+}
+
+#page-wrapper .all_p_page .entries{
+	margin-top: 8px;
+	font-size: 16px;
+}
+
+#page-wrapper .all_p_pagi{
+	float: right;
+}
+
+#page-wrapper .all_p_pagi a {
+    color: black;
+    float: left;
+    padding: 5px 10px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+	border-right: none;
+	background: #fff;
+}
+
+#page-wrapper .all_p_pagi a.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+}
+
+#page-wrapper .all_p_pagi a:hover:not(.active) {background-color: #ddd;}
+
+#page-wrapper .all_p_pagi a:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#page-wrapper .all_p_pagi a:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+	border-right: 1px solid #ddd;
+}
+
+.all_p_main{
+	display: flex;
+}
+
+.all_p_sidenav {
+    min-width: 180px;
+    z-index: 1;
+    background: #eee;
+}
+
+.all_p_sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #555;
+    display: block;	
+}
+
+.all_p_sidenav a:hover , .all_p_sidenav a.active{
+    color: #064579;
+	background: white;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+.all_p_white{
+	background: white;
+}
+
+.all_p_white .all_p_all_products{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.all_p_white .all_p_prod_item{
+	padding: 20px 15px 10px;
+	display: block
+}
+
+.all_p_white .all_p_prod_item a{
+	text-decoration: none;
+	color: #4caf50;
+}
+
+.all_p_white .all_p_prod_item img{
+	width: 190px;
+	height: 210px;
+}
+
+.all_p_white .all_p_prod_item:hover{
+	background: #ddd;
+}
+
+				/*  	add_products.php / edit_products.php / add_customer.php / edit_customer.php	  */
+				/*  	add_supplier.php / edit_supplier.php / add_employee.php / edit_employee.php	  */
+
+#page-wrapper .sub-heading_page div:nth-child(1){
+	font-size: 25px;
+	padding-left: 0;
+	margin-bottom: 5px;
+	color: #555;	
+	text-transform: uppercase;
+	letter-spacing: .5px;
+}
+
+#page-wrapper .sub-heading_page div:nth-child(2){
+	height: 4px;
+	border-radius: 2px;
+	width: 60px;
+	background-color: #4caf50;
+	margin-bottom: 25px;
+}
+				
+.add_product_form, .add_sub_product_form, .edit_product_form, .edit_sub_product_form,
+.add_cust_form, .add_cust_address_form, .edit_cust_form, .edit_cust_address_form,
+.add_sup_form, .add_sup_address_form, .edit_sup_form, .edit_sup_address_form,
+.add_emp_form, .add_emp_address_form, .edit_emp_form, .edit_emp_address_form{
+	background: white;
+	padding: 20px;
+	margin-top: 40px;
+	width: 94%;
+}
+				
+.add_product_form .add_prod_btn button, .edit_product_form .edit_prod_btn button,
+.add_cust_form .add_cust_btn button, .edit_cust_form .edit_cust_btn button,
+.add_sup_form .add_sup_btn button, .edit_sup_form .edit_sup_btn button,
+.add_emp_form .add_emp_btn button, .edit_emp_form .edit_emp_btn button{
+	border: none;
+	padding: 10px 15px;
+	color: white;
+	width: 110px;
+	font-size: 16px;
+	margin-top: 15px;
+	margin-right: 10px;
+}
+				
+.add_product_form .save_btn, .edit_product_form .save_btn,
+.add_cust_form .save_btn, .edit_cust_form .save_btn,
+.add_sup_form .save_btn, .edit_sup_form .save_btn,
+.add_emp_form .save_btn, .edit_emp_form .save_btn{
+	background: #4caf50;
+}
+
+.add_product_form .cancel_btn, .edit_product_form .cancel_btn,
+.add_cust_form .cancel_btn, .edit_cust_form .cancel_btn,
+.add_sup_form .cancel_btn, .edit_sup_form .cancel_btn,
+.add_emp_form .cancel_btn, .edit_emp_form .cancel_btn{
+	background: red;
+}
+
+.add_sub_prod_btn button, .edit_sub_prod_btn button,
+.add_cust_address_btn button, .edit_cust_address_btn button,
+.add_sup_address_btn button, .edit_sup_address_btn button,
+.add_emp_address_btn button, .edit_emp_address_btn button{
+	border: none;
+	padding: 10px 15px;
+	color: white;
+	width: 130px;
+	font-size: 16px;
+	margin-top: 15px;
+	margin-right: 10px;
+}
+				
+.add_sub_prod_btn .save_btn, .edit_sub_prod_btn .save_btn,
+.add_cust_address_form .save_btn, .edit_cust_address_form .save_btn,
+.add_sup_address_form .save_btn, .edit_sup_address_form .save_btn,
+.add_emp_address_form .save_btn, .edit_emp_address_form .save_btn{
+	background: #4caf50;
+}
+
+.add_sub_prod_btn .cancel_btn, .edit_sub_prod_btn .cancel_btn, 
+.add_cust_address_form .cancel_btn, .edit_cust_address_form .cancel_btn,
+.add_sup_address_form .cancel_btn, .edit_sup_address_form .cancel_btn,
+.add_emp_address_form .cancel_btn, .edit_emp_address_form .cancel_btn{
+	background: red;
+}
+
+.add_sub_prod_btn .add_btn, .edit_sub_prod_btn .add_btn, 
+.add_cust_address_form .add_btn, .edit_cust_address_form .add_btn,
+.add_sup_address_form .add_btn, .edit_sup_address_form .add_btn,
+.add_emp_address_form .add_btn, .edit_emp_address_form .add_btn{
+	background: #2196f3;
+	float: right;
+	width: 150px;
+	margin-right: 0px;
+}
+
+
+
+/* 	Table  */								
+
+.cust_table, .sup_table, .emp_table, .cat_table,
+.cust_ord_table, .cust_cart_table, .edit_cust_cart, 
+.sup_ord_table, .sup_cart_table, .edit_sup_cart{
+	background: white;
+	padding: 20px 30px;
+}
+
+.cust_table th, .cust_table td, .sup_table th, .sup_table td, .emp_table th, .emp_table td,
+.cust_ord_table th, .cust_ord_table td, .cust_cart_table th, .cust_cart_table td, .edit_cust_cart_table th, .edit_cust_cart_table td,
+.sup_ord_table th, .sup_ord_table td, .sup_cart_table th, .sup_cart_table td, .edit_sup_cart_table th, .edit_sup_cart_table td{
+	color: #555;
+}
+
+.cust_table th span, .sup_table th span, .emp_table th span,
+.cust_ord_table th span, .cust_cart_table th span, .edit_cust_cart_table th span,
+.sup_ord_table th span, .sup_cart_table th span, .edit_sup_cart_table th span{
+	color: #ccc;
+	font-size: 14px;
+}
+
+.cust_table tr:last-child, .sup_table tr:last-child, .emp_table tr:last-child,
+.cust_ord_table tr:last-child, .cust_cart_table tr:last-child, .edit_cust_cart_table tr:last-child
+.sup_ord_table tr:last-child, .sup_cart_table tr:last-child, .edit_sup_cart_table tr:last-child{
+	border-bottom: 1px solid #ddd;
+}
+
+.cust_table .cust_table_head, .sup_table_head, .sup_table, .emp_table_head, .emp_table, 
+.cust_ord_table_head, .cust_ord_table, .cust_cart_table_head, .cust_cart_table, .edit_cust_cart_table_head, .edit_cust_cart_table, 
+.sup_ord_table_head, .sup_ord_table, .sup_cart_table_head, .sup_cart_table, .edit_cust_sup_table_head, .edit_sup_cart_table{
+	margin-bottom: 25px;
+}
+
+.cust_table_head div:nth-child(1) span, .sup_table_head div:nth-child(1) span, .emp_table_head div:nth-child(1) span,
+.cust_ord_table_head div:nth-child(1) span, .cust_cart_table_head div:nth-child(1) span, .edit_cust_cart_table_head div:nth-child(1) span, 
+.sup_ord_table_head div:nth-child(1) span, .sup_cart_table_head div:nth-child(1) span, .edit_sup_cart_table_head div:nth-child(1) span {
+	color: #888;
+	font-size: 16px;
+	margin-right: 5px;
+}
+
+.cust_table_head div:nth-child(1) select, .sup_table_head div:nth-child(1) select, .emp_table_head div:nth-child(1) select, 
+.cust_ord_table_head div:nth-child(1) select, .cust_cart_table_head div:nth-child(1) select, .edit_cust_cart_table_head div:nth-child(1) select, 
+.sup_ord_table_head div:nth-child(1) select, .sup_cart_table_head div:nth-child(1) select, .edit_sup_cart_table_head div:nth-child(1) select{
+	border: none;
+	border-bottom: 2px solid #ccc;
+	padding-bottom: 5px;
+	font-size: 16px;
+	margin-right: 5px;
+}
+
+.cust_table_head div:nth-child(2) span, .sup_table_head div:nth-child(3) span, .emp_table_head div:nth-child(3) span, 
+.cust_ord_table_head div:nth-child(3) span, .cust_cart_table_head div:nth-child(3) span, .edit_cust_cart_table_head div:nth-child(3) span, 
+.sup_ord_table_head div:nth-child(3) span, .sup_cart_table_head div:nth-child(3) span, .edit_sup_cart_table_head div:nth-child(3) span{
+	color: #888;
+	font-size: 16px;
+	margin-right: 5px;
+}
+
+.cust_table_head div:nth-child(2) input, .sup_table_head div:nth-child(3) input, .emp_table_head div:nth-child(3) input, 
+.cust_ord_table_head div:nth-child(3) input, .cust_cart_table_head div:nth-child(3) input, .edit_cust_cart_table_head div:nth-child(3) input, 
+.sup_ord_table_head div:nth-child(3) input, .sup_cart_table_head div:nth-child(3) input, .edit_sup_cart_table_head div:nth-child(3) input{
+	border: none;
+	border-bottom: 2px solid #ccc;
+	padding-bottom: 2px;
+	font-size: 16px;
+	margin-right: 5px;
+	width: 120px;
+}
+
+.sup_table_head div:nth-child(2) select, .emp_table_head div:nth-child(2) select,
+.cust_ord_table_head div:nth-child(2) select, .cust_cart_table_head div:nth-child(2) select, .edit_cust_cart_table_head div:nth-child(2) select,
+.sup_ord_table_head div:nth-child(2) select, .sup_cart_table_head div:nth-child(2) select, .edit_sup_cart_table_head div:nth-child(2) select{
+	border: none;
+	border-bottom: 2px solid #ccc;
+	padding: 0 10px 5px;
+	font-size: 16px;
+	margin-right: 5px;
+}
+
+.cust_cart_info, .sup_cart_info{
+	background: white;
+	padding: 20px 20px 0;
+	margin-top: 40px;
+}
+
+.edit_cust_cart_table .chng_quant, .edit_sup_cart_table .chng_quant{
+	font-size: 16px;
+	width: 30px;
+	float: left;
+}
+
+.edit_cust_cart_table .chng_sign, .edit_sup_cart_table .chng_sign{
+	float: left;
+	margin-top: -3px;
+}
+
+.edit_cust_cart_table .chng_sign i, .edit_sup_cart_table .chng_sign i{
+	padding: 3px;
+	font-size: 8px;
+	border: 1px solid #bbb;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+.sup_cart_table .edit_add{
+	overflow: hidden;
+}
+
+.sup_cart_table .edit_add a{
+	float: left;
+	padding: 8px 20px;
+	text-decoration: none;
+	color: white;
+	font-size: 16px;
+}
+
+
+.chart{
+	padding: 20px 20px;
+	background: white;
+	margin: 10px auto 25px;
+	width: 50%;
+	cursor: pointer;
+}
+
+@media(max-width:768px) {
+	.chart{
+		width: 100%;
+	}
+}
+
+.chart:hover {
+	background: #fdfdfd;
+}
+
+.chart_info{
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+.chart_info span{
+	float: left;
+}
+
+.chart_info .chart_title{
+	font-size: 18px;
+	margin: 0 12px 5px;
+	padding-bottom: 5px;
+	border-bottom: 2px solid #4caf50;
+	color: #555;
+}
+
+.chart_info .weekly{
+	float: right;
+}
+
+.chart_info span button{
+	padding: 8px 15px;	
+}
+
+.chart center h5{
+	margin-top: 15px;
+	margin-bottom: 0px;
+}
+
+
+
+
+.cat_table .cat_box i:nth-child(1){
+	padding-left: 20px;
+}
+
+.cat_table .cat_box span{
+	font-size: 20px;
+}
+
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.drop-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: hidden;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.drop-content a {
+    color: black;
+    padding: 6px 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd}
+
+.show {display:block;}
+
+.modal-body input{
+	border: none;
+	font-size: 16px;
+	width: 300px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Flot Chart Containers */
+
+.flot-chart {
+    display: block;
+    height: 400px;
+}
+
+.flot-chart-content {
+    width: 100%;
+    height: 100%;
+}
+
+/* Custom Colored Panels */
+
+.huge {
+    font-size: 40px;
+}
+
+.panel-green {
+    border-color: #5cb85c;
+}
+
+.panel-green .panel-heading {
+    border-color: #5cb85c;
+    color: #fff;
+    background-color: #5cb85c;
+}
+
+.panel-green a {
+    color: #5cb85c;
+}
+
+.panel-green a:hover {
+    color: #3d8b3d;
+}
+
+.panel-red {
+    border-color: #d9534f;
+}
+
+.panel-red .panel-heading {
+    border-color: #d9534f;
+    color: #fff;
+    background-color: #d9534f;
+}
+
+.panel-red a {
+    color: #d9534f;
+}
+
+.panel-red a:hover {
+    color: #b52b27;
+}
+
+.panel-yellow {
+    border-color: #f0ad4e;
+}
+
+.panel-yellow .panel-heading {
+    border-color: #f0ad4e;
+    color: #fff;
+    background-color: #f0ad4e;
+}
+
+.panel-yellow a {
+    color: #f0ad4e;
+}
+
+.panel-yellow a:hover {
+    color: #df8a13;
+}

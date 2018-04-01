@@ -1,0 +1,341 @@
+<!DOCTYPE>
+<html lang='en'>
+
+<head>
+
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta name='description' content=''>
+    <meta name='author' content=''>
+
+    <title>Go Shopping Admin</title>
+	
+	<link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>	
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>	
+
+    <link href='css/bootstrap.min.css' rel='stylesheet'>
+
+    <link href='font-awesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+	
+	<link href='css/sb-admin.css' rel='stylesheet'>
+	
+	<script src='js/jquery.js'></script>
+	<script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+	
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js'></script>
+
+</head>
+
+<body>
+
+	<div class='container'>
+		<div class='row'>
+			<div class='col-md-5' style='background: white;'>
+				<canvas id="myLineChart" ></canvas>
+			</div>
+			<div class='col-md-offset-1 col-md-5' style='background: white;'>
+				<canvas id="myBarChart" ></canvas>
+			</div>
+		</div>
+		<div class='row' style='margin-top: 15px;'> 
+			<div class='col-md-5' style='background: white;'>
+				<canvas id="myRadarChart" ></canvas>
+			</div>
+			<div class='col-md-offset-1 col-md-5' style='background: white;'>
+				<canvas id="mypolarAreaChart" ></canvas>
+			</div>
+		</div>
+		<div class='row' style='margin-top: 15px;'> 
+			<div class='col-md-5' style='background: white;'>
+				<canvas id="myPieChart" ></canvas>
+			</div>
+			<div class='col-md-offset-1 col-md-5' style='background: white;'>
+				<canvas id="myDoughnutChart" ></canvas>
+			</div>
+		</div>
+		
+		<div class='row' style='margin-top: 15px;'> 
+			<div class='col-md-5' style='background: white;'>
+				<canvas id="mylineChart" ></canvas>
+			</div>
+			<div class='col-md-offset-1 col-md-5' style='background: white;'>
+				<canvas id="mylineLogChart" ></canvas>
+			</div>
+		</div>
+<script>
+var ctx1 = document.getElementById("myLineChart"); 
+var myLineChart = new Chart(ctx1, {
+	type: 'line',
+	data: {
+		labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange", "Voilet"],
+		datasets: [
+		{
+			label: "My First Dataset",
+			fill: false,
+			lineTension: 0.1,
+			backgroundColor: "rgba(75, 192, 192, 0.4)",
+			borderColor: "rgba(75, 192, 192, 1)",
+			borderCapStyle: "butt",
+			borderDash: [],
+			borderDashOffset: 0.0,
+			borderJoinStyle: "miter",
+			pointBorderColor: "rgba(75, 192, 192, 1)",
+			pointBackgroundColor: "#fff",
+			pointBorderWidth: 1,
+			pointHoverRadius: 5,
+			pointHoverBackgroundColor: "rgba(75, 192, 192, 1)",
+			pointHoverBorderColor: "rgba(200, 200, 200, 1)",
+			pointHoverBorderWidth: 2,
+			pointRadius: 1,
+			pointHitRadius: 10,
+			data: [65, 59, 80, 81, 56, 55, 40],
+		}, 
+		{
+			label: "My Second Dataset",
+			fill: false,			// Make it true to make it area chart
+			lineTension: 0.1,		// it will make point in curve not like sharp edge
+			backgroundColor: "rgba(75, 75, 192, 0.4)",
+			borderColor: "rgba(75, 72, 192, 1)",
+			borderCapStyle: "butt",
+			borderDash: [],
+			borderDashOffset: 0.0,
+			borderStyle: "miter",
+			pointBorderColor: "rgba(75, 72, 192, 1)",
+			pointBackgroundColor: "#fff",
+			pointBorderWidth: 1,
+			pointHoverRadius: 5,
+			pointHoverBackgroundColor: "rgba(75, 72, 192, 1)",
+			pointHoverBorderColor: "rgba(200, 200, 200, 1)",
+			pointHoverBorderWidth: 2,
+			pointRadius: 1,
+			pointHitRadius: 10,
+			data: [100, 20, 60, 20, 80, 55, 90],
+		}
+		
+		]
+	},
+	options: {
+		scales: {
+			yAxes: [{
+				ticks: {
+					beginAtZero:true
+				}, stacked: true /* This is done for stacking I this 2nd one is stacked above the 1st one Remove this and see the o/p  */
+			}]
+		}
+	}
+});
+
+
+
+var ctx1 = document.getElementById("myBarChart"); 
+Chart.defaults.scale.ticks.beginAtZero = true;  
+var myBarChart = new Chart(ctx1, {
+	type: 'bar',
+	data: {
+		labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange", "Voilet"],
+		datasets: [
+		{
+			label: "My First Dataset",
+			fill: true,
+			lineTension: 0.1,
+			backgroundColor: "rgba(75, 192, 192, 0.4)",
+			borderColor: "rgba(75, 192, 192, 1)",
+			borderCapStyle: "butt",
+			borderDash: [],
+			borderDashOffset: 0.0,
+			borderJoinStyle: "miter",
+			pointBorderColor: "rgba(75, 192, 192, 1)",
+			pointBackgroundColor: "#fff",
+			pointBorderWidth: 1,
+			pointHoverRadius: 5,
+			pointHoverBackgroundColor: "rgba(75, 192, 192, 1)",
+			pointHoverBorderColor: "rgba(200, 200, 200, 1)",
+			pointHoverBorderWidth: 2,
+			pointRadius: 3,
+			pointHitRadius: 10,
+			data: [65, 59, 80, 81, 56, 55, 40],
+		}, 
+		{
+			label: "My Second Dataset",
+			fill: true,
+			lineTension: 0.5,
+			backgroundColor: "rgba(75, 75, 192, 0.4)",
+			borderColor: "rgba(75, 72, 192, 1)",
+			borderCapStyle: "butt",
+			borderDash: [],
+			borderDashOffset: 0.0,
+			borderStyle: "miter",
+			pointBorderColor: "rgba(75, 72, 192, 1)",
+			pointBackgroundColor: "#fff",
+			pointBorderWidth: 1,
+			pointHoverRadius: 5,
+			pointHoverBackgroundColor: "rgba(75, 72, 192, 1)",
+			pointHoverBorderColor: "rgba(200, 200, 200, 1)",
+			pointHoverBorderWidth: 2,
+			pointRadius: 1,
+			pointHitRadius: 10,
+			data: [100, 20, 60, 20, 80, 55, 90],
+		}
+		
+		]
+	}
+});
+
+var ctx1 = document.getElementById("myRadarChart"); 
+Chart.defaults.scale.ticks.beginAtZero = true;  
+var myBarChart = new Chart(ctx1, {
+	type: 'radar',
+	data: {
+		labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange", "Voilet"],
+		datasets: [
+		{
+			label: "My First Dataset",
+			fill: true,
+			lineTension: 0.1,
+			backgroundColor: "rgba(75, 192, 192, 0.4)",
+			borderColor: "rgba(75, 192, 192, 1)",
+			borderCapStyle: "butt",
+			borderDash: [],
+			borderDashOffset: 0.0,
+			borderJoinStyle: "miter",
+			pointBorderColor: "rgba(75, 192, 192, 1)",
+			pointBackgroundColor: "#fff",
+			pointBorderWidth: 1,
+			pointHoverRadius: 5,
+			pointHoverBackgroundColor: "rgba(75, 192, 192, 1)",
+			pointHoverBorderColor: "rgba(200, 200, 200, 1)",
+			pointHoverBorderWidth: 2,
+			pointRadius: 3,
+			pointHitRadius: 10,
+			data: [65, 59, 80, 81, 56, 55, 40],
+		}, 
+		{
+			label: "My Second Dataset",
+			fill: true,
+			lineTension: 0.1,
+			backgroundColor: "rgba(75, 75, 192, 0.4)",
+			borderColor: "rgba(75, 72, 192, 1)",
+			borderCapStyle: "butt",
+			borderDash: [],
+			borderDashOffset: 0.0,
+			borderStyle: "miter",
+			pointBorderColor: "rgba(75, 72, 192, 1)",
+			pointBackgroundColor: "#fff",
+			pointBorderWidth: 1,
+			pointHoverRadius: 5,
+			pointHoverBackgroundColor: "rgba(75, 72, 192, 1)",
+			pointHoverBorderColor: "rgba(200, 200, 200, 1)",
+			pointHoverBorderWidth: 2,
+			pointRadius: 1,
+			pointHitRadius: 10,
+			data: [100, 20, 60, 20, 80, 55, 90],
+		}
+		
+		]
+	}
+});
+
+
+var ctx1 = document.getElementById("mypolarAreaChart"); 
+Chart.defaults.scale.ticks.beginAtZero = true;  
+var mypolarChart = new Chart(ctx1, {
+	type: 'polarArea',
+	data: {
+		labels: ["Red", "Blue", "Yellow", "Green", "Purple"],
+		datasets: [ {
+			label: "My First Dataset",
+			fill: true,
+			backgroundColor: ['#f1c40f', '#e67e22', '#16a085', '#2980b9', '#8e44ad'],
+			data: [65, 59, 70, 81, 56],
+			}
+		],
+	},
+	options: {
+			animation: {
+				// animateRotate: false,  // Used for stopping rotation
+				animateScale: false	   // Used for rotation but with fixed size
+			}
+		}
+});
+
+var ctx1 = document.getElementById("myPieChart"); 
+Chart.defaults.scale.ticks.beginAtZero = true;  
+var pie = new Chart(ctx1, {
+	type: 'pie',
+	data: {
+		labels: ["Red", "Blue", "Yellow", "Green", "Purple"],
+		datasets: [ {
+			label: "My First Dataset",
+			fill: true,
+			backgroundColor: ['#f1c40f', '#e67e22', '#16a085', '#2980b9', '#8e44ad'],
+			data: [65, 59, 70, 81, 56],
+			}
+		],
+	},
+	options: {
+		// cutoutPercentage: 50,  // Uncomment this then it will behave as doughnut chart
+		rotation: Math.PI * .5,
+		animation: {
+			animateScale: true
+		}
+	}
+});
+
+var ctx1 = document.getElementById("myDoughnutChart"); 
+Chart.defaults.scale.ticks.beginAtZero = true;  
+var myDoughnutChart = new Chart(ctx1, {
+	type: 'doughnut',
+	data: {
+		labels: ["Red", "Blue", "Yellow", "Green", "Purple"],
+		datasets: [ {
+			label: "My First Dataset",
+			fill: true,
+			backgroundColor: ['#f1c40f', '#e67e22', '#16a085', '#2980b9', '#8e44ad'],
+			data: [65, 59, 70, 81, 56],
+			}
+		],
+	},
+	options: {
+			animation: {
+				// animateRotate: false,  // Used for stopping rotation
+				animateScale: false	   // Used for rotation but with fixed size
+			}
+		}
+});
+
+
+var ctx1 = document.getElementById("mylineChart"); 
+Chart.defaults.scale.ticks.beginAtZero = true;  
+var pie = new Chart(ctx1, {
+	type: 'line',
+	data: {
+		labels: ["Red", "Blue", "Yellow", "Green", "Purple"],
+		datasets: [ {
+			label: "My First Dataset",
+			borderColor: '#f1c40f',
+			data: [65, 59, 70, 81, 56],
+			}
+		],
+	},
+	options: {		
+		scales: {
+			yAxes: [{
+				type: 'logarithmic'  /*,
+				ticks: {
+					min: 1,
+					max: 60
+				} */
+			}]
+		}
+	}
+});
+
+</script>
+	</div>
+
+<script src='js/bootstrap.min.js'></script>
+
+</body>
+
+</html>
